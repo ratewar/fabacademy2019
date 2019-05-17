@@ -231,6 +231,165 @@ Outsource the milling of aluminum parts for hector as in fab lab we dont have me
 For both these options we looked at mechanism and these are the two different type of mechanism that are used in these machines. It was critical for our group to understand this mechansim so that we can order the right parts. 
 Like Hector uses <a href="https://en.wikipedia.org/wiki/Rack_and_pinion">Rack and Pinion</a> and Nadya week cardboard CNC uses <a href="https://hackaday.com/2018/11/13/mechanisms-lead-screws-and-ball-screws/">Lead screw mechanism</a>
 </p>
+
+
+<p>
+<h2 class="section-subheading">Getting Started MTM CNC machine</h2>
+We identified the key activities for this mahine by following Nadya link. Some of the material was not available with us in Lab so we had to improvise the design a little bit to make it work.
+<p>
+<h4 class="section-subheading">BOM</h4>
+<li>linear and threaded rods</li>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly4.jpeg" alt="">
+<li>Stepper Motors</li>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly5.jpeg" alt="">
+<li>Cardboard for laser Cutting</li>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly2.jpeg" alt="">
+<li>RAMPS v1.4 for Stepper motors</li>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/ramps.jpeg" alt="">
+<li>Arduino</li>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/mega.jpg" alt="">
+<li>Screws and nuts</li>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/screwnut.jpeg" alt="">
+</p>
+<p>
+<h4 class="section-subheading">CAD modelling</h4>
+We faced our first challenge with Nadya design the link that was shared was not having the Cardboard cut files so we decided to design it from scratch. Also the stepper motor used by Nadya had the threaded rod attached.
+<br/>
+<br/>
+First we thought of getting a coupler for stepper motor from market but it was not available.So we decided to change the design and create our own version of it.
+<br/>
+<br/>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly17.jpeg" alt="">
+<br/>
+<br/>
+<h5 class="section-subheading">Designing Our Own Coupler Version</h5>
+As we don't had the right component we made a customized coupler for our threaded rod and stepper motor.
+<br/>
+<br/>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/steppercoupler.jpg" alt="">
+<br/>
+<br/>
+You can find more details in the attached Fusion file how this was designed. Screenshot also attached for your reference.
+<li>
+<a href="img/portfolio/machineweek/bobin v1.f3d" download>Coupler Part1</a>
+</li>
+<li>
+<a href="img/portfolio/machineweek/coupler v1.f3d" download>Coupler Part2</a>
+</li>
+<br/>
+<br/>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/coupler.jpg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/boblin.jpg" alt="">
+
+
+</p>
+<h4 class="section-subheading">Laser Cutting</h4>
+Next step was to create the design as per Nadya cradboard CNC design, again we had missing files so we designed this in Coreldraw and later cut it using the laser machine. You can download files from here.
+<br/>
+<br/>
+<li>
+<a href="img/portfolio/machineweek/cncassembly.dxf" download>Axix Assembly File</a>
+</li>
+<br/>
+<br/>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/cncassembly.jpg" alt="">
+<br/>
+<br/>
+This is how laser cut axis for CNC look like.
+<br/>
+<br/>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly2.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly1.jpeg" alt="">
+
+
+</p>
+<p>
+<h4 class="section-subheading">3d Printing and Injection Molding</h4>
+We used injection molding and casting (which we outsourced) and 3d printer to print the customized coupler.
+You can refer to the design files attached in laser cutting section.Again you can get the right stepper motor with threaded rod attached, in our case order delivery was taking time so we customized it for machine week
+<br/>
+<br/>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly9.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly10.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly11.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/coupler.jpeg" alt="">
+
+<br/>
+<br/>
+
+Final outcome
+<br/>
+<br/>
+
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly6.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly7.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly8.jpeg" alt="">
+
+<br/>
+<br/>
+
+Final assembly
+<br/>
+<br/>
+
+<img class="img-responsive img-left" src="img/portfolio/machineweek/steppercoupler.jpg" alt="">
+
+
+</p>
+<p>
+<h4 class="section-subheading">Electronics and Programming</h4>
+Though nadya fabricated the electronics in fab lab, for intial testing of our machine we wanted to try pre fabricated board. So we decided to leverage Arduino and RAMPS v1.4. 
+<br/>
+<br/>
+Steps needed to make it work
+<br/>
+<br/>
+
+<li>
+Attaching RAMPS Shield on Arduino and connecting the stepper driver with RAMPS
+<img class="img-responsive img-left" src="img/portfolio/machineweek/rampard.jpeg" alt="">
+</li>
+<br/>
+<br/>
+<li>
+Uploading the firmware <a href="https://github.com/grbl/grbl"> GRBL</a> to arduino. 
+<a href="img/portfolio/machineweek/GRBL_RAMPS1_4.zip" target="_blank" class="btn-theme btn-theme-md btn-default-bg "download>Download GRBL</a>
+<br/>
+<br/>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/grblupload.jpeg" alt="">
+
+</li>
+<br/>
+<br/>
+<li>
+Download the G Code Universal Sender App
+<br/>
+<br/>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/gcode.jpg" alt="">
+<br/>
+<br/>
+</li>
+<li> Coding to test Stepper Motor and Stepper Motor Driver
+
+<a href="img/portfolio/machineweek/stepper_motor_driver.ino" target="_blank" class="btn-theme btn-theme-md btn-default-bg "download>Download Code/Stepper Motor testing</a>
+              
+</li>
+<li> Testing Videos</li>
+
+TBD
+
+</p>
+
+
+<p>
+<h4 class="section-subheading">Assembling the machine</h4>
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly16.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly12.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly13.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly14.jpeg" alt="">
+<img class="img-responsive img-left" src="img/portfolio/machineweek/lasercutassemebly15.jpeg" alt="">
+</p>
+
                              
            </div>               
           </div>
